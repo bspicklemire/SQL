@@ -1,0 +1,28 @@
+CREATE TABLE music_store (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, cost INTEGER, stock INTEGER, category TEXT);
+
+INSERT INTO music_store VALUES (1, "Evans Drumhead", 20, 10, 5, "percussion acc");
+INSERT INTO music_store VALUES (2, "Remo Drumhead", 25, 15, 5, "percussion acc");
+INSERT INTO music_store VALUES (3, "VF Sticks", 12, 6, 6, "percussion acc");
+INSERT INTO music_store VALUES (4, "VD Reeds", 25, 18, 5, "ww acc");
+
+INSERT INTO music_store VALUES (5, "Rico Reeds", 24, 16, 8, "ww acc");
+
+INSERT INTO music_store VALUES (6, "Kidder Reeds", 18, 12, 4, "ww acc");
+INSERT INTO music_store VALUES (7, "Al Cass Oil", 7, 4, 4, "brass acc");
+INSERT INTO music_store VALUES (8, "Harmon Mute", 40, 25, 2, "brass acc");
+INSERT INTO music_store VALUES (9, "slide Oil", 5, 2, 56, "brass acc");
+INSERT INTO music_store VALUES (10, "Violin Strings", 25, 12, 3, "orch acc");
+INSERT INTO music_store VALUES (11, "Viola Strings", 30, 15, 2, "orch acc");
+INSERT INTO music_store VALUES (12, "Cello Strings", 69, 30, 4, "orch acc");
+INSERT INTO music_store VALUES (13, "Condenser Mic", 100, 50, 3, "combo acc");
+INSERT INTO music_store VALUES (14, "Direct Box", 40, 25, 2, "combo acc");
+INSERT INTO music_store VALUES (15, "mic stand", 32, 12, 3, "combo acc");
+
+
+--order all items by retail price
+SELECT * FROM music_store ORDER BY price; 
+
+
+--count number (SUM) of items from each category
+SELECT SUM(stock) FROM music_store GROUP BY category
+
